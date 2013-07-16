@@ -1,0 +1,8 @@
+#!/bin/bash
+
+perrun=10000
+for i  in `seq 0 40`; do
+  startinit=$(( $i*$perrun ))
+  echo $startinit
+  bsub -q cmscaf1nd "batch.sh testV7/DY50_$startinit DY50V7_cfg.py $startinit $perrun"
+done  
